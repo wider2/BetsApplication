@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="toolbar_caption_height">30dp</dimen>
+
+    <!--dialog-->
+    <dimen name="dialog_margin_horizontal">24dp</dimen>
+    <dimen name="dialog_margin_vertical">24dp</dimen>
+    <dimen name="dialog_margin_vertical_small">21dp</dimen>
+    <dimen name="dialog_margin_button_vertical">@dimen/margin_default</dimen>
+    <dimen name="dialog_margin_around">40dp</dimen>
+
+    <!-- margins -->
+    <dimen name="margin_three">3dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_five">5dp</dimen>
+    <dimen name="margin_notification_side">5dp</dimen>
+    <dimen name="margin_default">8dp</dimen>
+    <dimen name="margin_default4">12dp</dimen>
+    <dimen name="margin_tvelwe">12dp</dimen>
+    <dimen name="margin_big">16dp</dimen>
+    <dimen name="margin_seventeen">17dp</dimen>
+    <dimen name="margin_large">18dp</dimen>
+    <dimen name="margin_twenty">20dp</dimen>
+    <dimen name="margin_twentytwo">22dp</dimen>
+    <dimen name="margin_bigger">24dp</dimen>
+    <dimen name="margin_x">27dp</dimen>
+    <dimen name="margin_xl">32dp</dimen>
+    <dimen name="margin_xxl">64dp</dimen>
+    <dimen name="margin_xxxl">150dp</dimen>
+    <dimen name="margin_fab">64dp</dimen>
+    <dimen name="margin_huge">70dp</dimen>
+    <dimen name="margin_massive">82dp</dimen>
+    <dimen name="margin_default2">10dp</dimen>
+    <dimen name="margin_giant">217dp</dimen>
+    <dimen name="margin_image_top">38dp</dimen>
+    <dimen name="margin_textview_top">48dp</dimen>
+    <dimen name="margin_xx">48dp</dimen>
+    <dimen name="margin_call_options_btn">50dp</dimen>
+    <dimen name="margin_content_left">72dp</dimen>
+    <dimen name="margin_enormous">328dp</dimen>
+    <dimen name="margin_gigantic">90dp</dimen>
+
+
+</resources>

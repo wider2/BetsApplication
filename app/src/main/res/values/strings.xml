@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Bets Application</string>
+
+    <string name="no_connection">There is no internet connection found. Please check the network settings, setup WiFi.</string>
+    <string name="msg_error_occurred">There is error occurred while implementing this request.</string>
+    <string name="network_settings">Network settings</string>
+
+    <string name="info_not_found">Item description not found.</string>
+    <string name="please_wait_loading">Please wait while data are loading</string>
+    <string name="server_response">Server response</string>
+    <string name="no_response">Api server is busy right now and heve no response. Please wait some time to reload again.</string>
+    <string name="reload">Reload again from server.</string>
+    <string name="total_found">There are found</string>
+    <string name="not_found">There are nothing found by your request.</string>
+    <string name="no_bets_found">There are no bets found. Please input some.</string>
+    <string name="db_operation_failed">Database operation has been failed.</string>
+
+    <string name="team">Team</string>
+    <string name="score">Score</string>
+    <string name="score0">0</string>
+    <string name="your_prediction">Your prediction of score</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="submit">Submit</string>
+    <string name="get_results">Get results</string>
+    <string name="restart">Restart</string>
+    <string name="caption_predicitions">Your predictions of matches</string>
+    <string name="caption_results">Matches results</string>
+
+
+</resources>
