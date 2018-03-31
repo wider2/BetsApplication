@@ -25,11 +25,12 @@ import march.marchappl.model.Matches;
 import march.marchappl.model.Prediction;
 import march.marchappl.utils.ColorUtility;
 
+import static march.marchappl.utils.GlobalConstants.COLOR_NORMAL;
+import static march.marchappl.utils.GlobalConstants.COLOR_SELECTED;
+
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
-    private static final int COLOR_NORMAL = android.R.color.transparent;
-    private static final int COLOR_SELECTED = R.color.gray_light2;
     private int lastPosition = -1;
     Context context;
     private List<Matches> mList;

@@ -77,8 +77,9 @@ public class ResultsFragmentPresenter {
         Observable.fromCallable(new Callable<Session>() {
             @Override
             public Session call() {
-                Session session = mDb.betsDao().checkLastVisit(GlobalConstants.addMinuteTimestamp());
+                results = mDb.betsDao().getAllResults();
 
+                Session session = mDb.betsDao().checkLastVisit(GlobalConstants.addMinuteTimestamp());
                 return (session != null) ? session : new Session();
             }
         })
@@ -87,11 +88,15 @@ public class ResultsFragmentPresenter {
                 .subscribe(new Consumer<Session>() {
                     @Override
                     public void accept(Session session) throws Exception {
-                        //if data has 1 minute old
-                        if (session.getLastVisit() == 0 || session.getLastVisit() < GlobalConstants.addMinuteTimestamp()) {
+                        if (results.isEmpty()) {
                             getResultsList();
                         } else {
-                            getMatchesFromDatabase();
+                            //if data has 1 minute old
+                            if (session.getLastVisit() == 0 || session.getLastVisit() < GlobalConstants.addMinuteTimestamp()) {
+                                getResultsList();
+                            } else {
+                                getMatchesFromDatabase();
+                            }
                         }
                     }
                 });

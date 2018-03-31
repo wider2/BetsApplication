@@ -45,6 +45,7 @@ public class ResultsFragment extends Fragment implements IResultsFragment {
     ResultsFragmentPresenter mPresenter;
     private Unbinder unbinder;
     ResultsAdapter adapterRv;
+    //ScoresAdapter adapterRv;
     LinearLayoutManager layoutManager;
     List<Matches> mMatches;
     List<Prediction> mPredictions;
@@ -121,6 +122,7 @@ public class ResultsFragment extends Fragment implements IResultsFragment {
             mRecyclerView.setLayoutManager(layoutManager);
 
             adapterRv = new ResultsAdapter(mMatches);
+            //adapterRv = new ScoresAdapter(mMatches);
             mRecyclerView.setAdapter(adapterRv);
             mRecyclerView.setVisibility(View.VISIBLE);
             mRecyclerView.setHasFixedSize(true);
@@ -165,8 +167,8 @@ public class ResultsFragment extends Fragment implements IResultsFragment {
 
 
     private void initData() {
-        mPresenter.getResultsList();
-        //mPresenter.checkLastSession();
+        //mPresenter.getResultsList();
+        mPresenter.checkLastSession();
     }
 
 

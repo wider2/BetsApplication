@@ -19,16 +19,16 @@ import march.marchappl.utils.ColorUtility;
 import java.util.ArrayList;
 import java.util.List;
 
+import static march.marchappl.utils.GlobalConstants.COLOR_SELECTED;
+
 public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ViewHolder> {
 
-    private List<Matches> mEmployees = new ArrayList<>();
+    private List<Matches> mList = new ArrayList<>();
     private List<Prediction> mPredictions;
     private List<Results> mResults;
-    private static final int COLOR_NORMAL = android.R.color.transparent;
-    private static final int COLOR_SELECTED = R.color.gray_light2;
 
     public ResultsAdapter(List<Matches> employeeList) {
-        this.mEmployees.addAll(employeeList);
+        this.mList.addAll(employeeList);
     }
 
     @Override
@@ -39,13 +39,14 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ViewHold
     }
 
     //trigger DiffUtil to detect changes.
-    public void updateListItems(@NonNull List<Matches> employees, @NonNull List<Prediction> predictions, @NonNull List<Results> results) {
+    public void updateListItems(@NonNull List<Matches> List, @NonNull List<Prediction> predictions, @NonNull List<Results> results) {
+
         //calling the CallBack class and getting the difference between old and new list and dispatching it to the adapter.
-        final ResultsDiffCallback diffCallback = new ResultsDiffCallback(this.mEmployees, employees);
+        final ResultsDiffCallback diffCallback = new ResultsDiffCallback(this.mList, List);
         final DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(diffCallback);
 
-        this.mEmployees.clear();
-        this.mEmployees.addAll(employees);
+        this.mList.clear();
+        this.mList.addAll(List);
         this.mPredictions = predictions;
         this.mResults = results;
 
@@ -59,7 +60,6 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ViewHold
         if (payloads.isEmpty()) {
             super.onBindViewHolder(holder, position, payloads);
         } else {
-
             Bundle bundle = (Bundle) payloads.get(0);
             if (bundle.size() != 0) {
                 String team1 = bundle.getString("team1");
@@ -76,7 +76,7 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        final Matches match = mEmployees.get(position);
+        final Matches match = mList.get(position);
 
         holder.tvTeam1.setText(match.getTeamName1());
         holder.tvTeam2.setText(match.getTeamName2());
@@ -104,7 +104,7 @@ public class ResultsAdapter extends RecyclerView.Adapter<ResultsAdapter.ViewHold
 
     @Override
     public int getItemCount() {
-        return mEmployees.size();
+        return mList.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
